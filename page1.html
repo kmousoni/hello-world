@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <title>page 1</title> 
+    <style>
+      body{    
+            background-color:lightgray;
+        color:darkcyan; font-family: verdana;
+        }
+        button {
+            background-color:lightcyan;
+            border: 2px solid black;
+            color:darkcyan;
+        }
+        button:hover {
+            background-color:darkcyan;
+            border: 2px solid black;color:white;
+        }
+        input {
+          background-color:lightcyan;  
+            border: 2px solid black;
+            color:darkcyan;
+        }
+    
+        ul {list-style-type: none; margin:0; padding:0; width:250px; 
+              background-color: lightcoral; border: 2px solid black ;}
+          li a {display:block; color:darkcyan; padding:10px; text-decoration: none;} 
+          li   {text-align: center; border-bottom: 1px black; 
+                font-family: verdana;}
+          li:last-child {border-bottom: none;}
+          li a.active {background-color: lightcyan; color: darkcyan;}
+          li a:hover:not(.active){background-color: grey;color:white;} 
+                   
+           .test {position: relative; width: 1000; height:0px;}
+           .navigation { position: absolute; top: 80px; left:500px;}
+    </style>            
+<script>    
+        
+function Cardriver(price,topspeed,accelaration,consumption) {
+this.price=price;
+this.topspeed=topspeed;
+this.accelaration=accelaration;
+this.consumption=consumption;
+this.ShowCardriver=ShowCardriver;
+}        
+        
+function ShowCardriver() {
+document.write("Price: "+this.price+"<br>");    
+document.write("Top speed: "+this.topspeed+"<br>");
+document.write("Accelaration: "+this.accelaration+"<br>");
+document.write("Consumption: "+this.consumption+"<hr>");
+}
+</script>
+</head>
+    
+<body>    
+    <script>
+Car1=new Cardriver("16,662 euros","177 Km/h","10.7 sec 0-100 Km/h","5.2 lt/100Km");
+Car2=new Cardriver("17,702 euros","152 Km/h","11,1 sec 0-100 Km/h","7.1 lt/100Km");
+Car3=new Cardriver("21,505 euros","210 Km/h","9.5 sec 0-100 Km/h","7.6 lt/100Km");
+Car4=new Cardriver("15,899 euros","180 Km/h","10.3 sec 0-100 Km/h","6.6 lt/100Km");       
+Car1.ShowCardriver();
+Car2.ShowCardriver();
+Car3.ShowCardriver();
+Car4.ShowCardriver();
+    </script> 
+    
+<div class="test">         
+<ul class="navigation">
+    <li><a class="active" href="page1.html">Page 1</a> </li>
+    <li><a href="Index.html">Home</a></li>
+</ul>
+</div> 
+    
+</body>
+</html>
