@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+   
+        body{    
+            background-color:lightgray;
+        color:darkcyan; font-family: verdana;
+        }
+        button {
+            background-color:lightcyan;
+            border: 2px solid black;
+            color:darkcyan;
+        }
+        button:hover {
+            background-color:darkcyan;
+            border: 2px solid black;color:white;
+        }
+        input {
+          background-color:lightcyan;  
+            border: 2px solid black;
+            color:darkcyan;
+        }
+    
+        ul {list-style-type: none; margin:0; padding:0; width:250px; 
+              background-color: lightcoral; border: 2px solid black ;}
+          li a {display:block; color:darkcyan; padding:10px; text-decoration: none;} 
+          li   {text-align: center; border-bottom: 1px black; 
+                font-family: verdana;}
+          li:last-child {border-bottom: none;}
+          li a.active {background-color: lightcyan; color: darkcyan;}
+          li a:hover:not(.active){background-color: grey;color:white;} 
+                   
+           .test {position: relative; width: 1000; height:0px;}
+           .navigation { position: absolute; top: 0px; left:500px;}
+    </style>   
+        
+    <script>    
+var array5 = [];  
+var arrayneg = [];
+function user() {
+    
+    var x = parseInt(document.getElementById("user_form").elements.item(0).value);
+    if (x==0){
+    document.getElementById("notzero").innerHTML ="ΠΡΟΣΟΧΗ: Το μηδέν δεν είναι αποδεκτή τιμή, δώστε νέο αριθμό";}
+    
+    else if (x!=0 && array5.length<10) {
+    array5.push(x);
+    document.getElementById("notzero").innerHTML ="";  
+    document.getElementById("show0").innerHTML = array5;
+    document.getElementById("legth").innerHTML ="Ο αριθμός των θέσεων του πίνακα είναι:"+array5.length;
+    document.getElementById("user_form").reset();}
+    
+    else if (x!=0 && array5.length==10) { 
+    document.getElementById("maxarray").innerHTML ="ΠΡΟΣΟΧΗ: Δεν μπορείτε να καταχωρήσετε περισσότερες από 10 τιμές! "}}
+        
+function user2() { 
+    var sum=0       
+    for (i=0; i<array5.length; i++)
+    {if (array5[i]>0) {
+    sum=sum+array5[i];}}
+    document.getElementById("totalsum").innerHTML ="Το άθροισμα των θετικών όρων του πίνακα είναι: "+sum;
+     
+    var multi=1  
+    for (i=0; i<array5.length; i++)
+    {if (array5[i]>0) {
+    multi=multi*array5[i];}}
+    document.getElementById("totalmulti").innerHTML ="ενώ το γινόμενο τους είναι: "+multi;
+
+    for (i=0; i<array5.length; i++)
+    {if (array5[i]<0) {arrayneg.push(array5[i])}} 
+    document.getElementById("showneg1").innerHTML = "Οι αρνητικοί όροι του πίνακα είναι οι παρακάτω:"
+    document.getElementById("showneg2").innerHTML = arrayneg;
+}     
+                   
+</script>    
+</head>
+<body>
+     
+<h1>Πίνακας με έως δέκα (10) ακέραιες τιμές</h1>
+<h3>Οι τιμές είναι οι εξής:</h3>
+ 
+<p id="show0"></p>
+<h4 id="notzero" style="color:white"></h4> 
+<p id="legth"></p>   
+<h4 id="maxarray" style="color:white"></h4>
+<h4>Καταχωρείστε μία τιμή και πατήστε το "Add-value"</h4>
+<h4>Μπορείτε σε οποιαδήποτε στιγμή κατά τη διάρκεια της καταχώρησης,</h4>  
+<h4>να πατήσετε το "Calculate"</h4>
+<form id="user_form">
+<input type="text" name="array-value" ><br>  
+</form> 
+<br>
+<button onclick="user()">Add-value</button>
+<br>
+<br>
+<button onclick="user2()">Calculate</button>    
+<p id="totalsum"></p> 
+<p id="totalmulti"></p> 
+<p id="showneg1"></p>     
+<p id="showneg2"></p> 
+    
+<div class="test">         
+<ul class="navigation">
+    <li><a class="active" href="index.html">Home</a> </li>
+    <li><a href="page1.html">Page 1</a></li>
+</ul>
+</div> 
+    
+</body>
+</html>
